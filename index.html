@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Font Awesome  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <!-- Css -->
+    <link rel="stylesheet" href="/index.css" />
+    <!-- JavaScript Link -->
+    <script src="/index.js" defer></script>
+    <!-- Tittle -->
+    <title>Password Generator</title>
+  </head>
+  <body>
+    <div class="pw-container">
+      <div class="pw-header">
+        <div class="pw">
+            <span id="pw"> yujhg675#$%^</span>
+            <button id="copy">Copy </button>
+        </div>
+      </div>
+      <div class="pw-body">
+        <div class="form-control">
+            <lable for="len">Password Length</lable>
+            <input id="len" type="number" value="15" min="2" max="30" />
+          </div>
+        <div class="form-control">
+          <lable for="upper">Contain Uppercase Letters</lable>
+          <input id="upper" type="checkbox" />
+        </div>
+        <div class="form-control">
+          <lable for="lower">Contain Lowercase Letters</lable>
+          <input id="lower" type="checkbox" />
+        </div>
+        <div class="form-control">
+          <lable for="number">Contain Number</lable>
+          <input id="number" type="checkbox" />
+        </div>
+        <div class="form-control">
+          <lable for="symbol">Contain Symbols</lable>
+          <input id="symbol" type="checkbox" />
+        </div>
+        <button class="generate" id="generate">
+            Generate Password
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
