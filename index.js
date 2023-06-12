@@ -85,7 +85,44 @@ copyE1.addEventListener("click", () => {
   textarea.value = password;
   document.body.appendChild(textarea);
   textarea.select();
-  document.execCommand("copy");
+  document.execCommand("save");
   textarea.remove();
-  alert("Password copied to clipboard");
+  alert("Password saved to clipboard");
+  updateLS();
 });
+
+
+function updateLS() {
+  // const password = document.querySelectorAll("copy");
+
+  // const Password = [];
+
+  // notesText.forEach((Password) => {
+  //     notes.push(Password.value);
+  // });const 
+
+  // localStorage.setItem("notes", JSON.stringify(password));
+  const password = pwE1.innerText;
+
+  let passwords = []
+  if(JSON.parse(localStorage.getItem('passwords'))){
+
+     passwords = JSON.parse(localStorage.getItem('passwords'));
+  }
+
+  passwords.push(password);
+  localStorage.setItem('passwords', JSON.stringify(passwords));
+  getSavedPasswords();
+}
+
+const getSavedPasswords = () => {
+  const savedPasswords = document.querySelector(".saved-password");
+
+const passwords = JSON.parse(localStorage.getItem('passwords'));
+
+savedPasswords.innerHTML = passwords.map((password) => {
+  return `<ul>
+  <li>${password}</li>
+  </ul>`
+})
+}
